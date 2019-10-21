@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Etch A Sketch</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/main.css">
+</head>
+<body>
+    <div class="darken hidden"></div>
+    <div class="popup hidden">
+        <legend>Grid Size</legend>
+        <input type="number" value="16" min="5" max="128">
+        <button>Set</button>
+    </div>
+    <main>
+        <h1 class="title">Etch A Sketch</h1>
+        <button class="reset">Reset Grid</button>
+        <div class="grid"></div>
+    </main>
+    <script src="static/main.js"></script>
+</body>
+</html>
