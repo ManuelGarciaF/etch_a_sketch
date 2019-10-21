@@ -1,11 +1,9 @@
-
 // Fills the grid with cells and makes them hoverable.
 // gridSize is the side length of the grid
 const populateGrid = (gridSize) => {
     const gridContainer = document.querySelector(".grid");
 
-    gridContainer.style.gridTemplate = `repeat(${gridSize}, 1fr) / repeat(${gridSize}, 1fr)`
-
+    gridContainer.style.gridTemplate = `repeat(${gridSize}, 1fr) / repeat(${gridSize}, 1fr)`;
 
     for (let i = 0; i < gridSize ** 2; i++) {
         const cell = document.createElement("div");
@@ -18,7 +16,6 @@ const populateGrid = (gridSize) => {
         });
     });
 };
-
 
 // Toggles visibility of the grid size popup.
 const togglePopup = () => {
@@ -40,15 +37,27 @@ document.querySelector(".reset").addEventListener("click", () => {
 });
 
 // Popup submit.
-document
-    .querySelector(".popup button")
-    .addEventListener("click", () => {
-        if (document.querySelector(".popup input").value > 128 ||
-        document.querySelector(".popup input").value < 4) return; // verify input
-        togglePopup();
-        clearCells();
-        populateGrid(document.querySelector(".popup input").value);
+document.querySelector(".popup button").addEventListener("click", () => {
+    if (
+        document.querySelector(".popup input").value > 128 ||
+        document.querySelector(".popup input").value < 4
+    )
+        return; // verify input
+    togglePopup();
+    clearCells();
+    populateGrid(document.querySelector(".popup input").value);
+});
+
+document.querySelector("#gridCBox").addEventListener("change", () => {
+    const cells = document.querySelectorAll(".cell");
+
+    const border = (cells[0].style.borderWidth === "0px") ? "1px" : "0px"
+    console.log(border)
+
+    cells.forEach((element) => {
+        element.style.borderWidth = border;
     });
+});
 
 // Default value
 populateGrid(16);

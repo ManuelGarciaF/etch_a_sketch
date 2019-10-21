@@ -29,14 +29,31 @@ main h1.title {
   margin-top: 0.75em;
 }
 
-.reset {
+.controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.controls .reset {
   font-size: 125%;
   color: white;
-  margin: 1em;
+  margin: 1em 1em 1em 3em;
   border: 0;
   border-radius: 10px;
   padding: 0.5em 1em;
   background-color: #9b59b6;
+}
+
+.controls .gridCheck label {
+  display: inline;
 }
 
 .grid {
